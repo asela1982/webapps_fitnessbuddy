@@ -54,7 +54,7 @@
                     </div>
                     <div class="panel-body">
 
-                        <form method="POST" action="/send">
+                        <form method="POST" action="/send" name="register" onsubmit="return validateForm()">
                             <div class="form-group">
                                 <label for="exampleInputEmail">Email address</label>
                                 <input type="email" class="form-control" id="exampleInputEmail" name="exampleInputEmail" placeholder="asela.d82@gmail.com">
@@ -98,45 +98,35 @@
 
                             <p style="margin-top:10px">Marital status</p>
                             <div class="radio-inline">
-                                
-                                    <input type="radio" name="optionsRadiosMarital" id="optionsRadios1" value="Married"> Married
-                                
+                                    <input type="radio" name="optionsRadiosMarital" id="optionsRadios1" value="Married"> Married 
                             </div>
                             <div class="radio-inline">
-                                
                                     <input type="radio" name="optionsRadiosMarital" id="optionsRadios2" value="Married with Children"> Married with Children
-                               
                             </div>
                             <div class="radio-inline">
-                                
                                     <input type="radio" name="optionsRadiosMarital" id="optionsRadios3" value="Single"> Single
-                                
                             </div>
                             <div class="radio-inline">
-                                
-                                    <input type="radio" name="optionsRadiosMarital" id="optionsRadios4" value="Divorced or Widowed"> Divorced or Widowed
-                               
+                                    <input type="radio" name="optionsRadiosMarital" id="optionsRadios4" value="Divorced or Widowed"> Divorced or Widowed       
                             </div>
                             <div class="radio-inline">
-                                
                                     <input type="radio" name="optionsRadiosMarital" id="optionsRadios5" value="Separated"> Separated
-                               
                             </div>
 
 
                             <p style="margin-top:10px">Level</p>
-                            <label class="checkbox-inline">
-                                <input type="checkbox" id="inlineCheckbox1" name="optionsRadiosLevel" value="Beginner"> Beginner
-                            </label>
-                            <label class="checkbox-inline">
-                                <input type="checkbox" id="inlineCheckbox2" name="optionsRadiosLevel" value="Intermediate"> Intermediate
-                            </label>
-                            <label class="checkbox-inline">
-                                <input type="checkbox" id="inlineCheckbox3" name="optionsRadiosLevel" value="Advanced"> Advanced
-                            </label>
-                            <label class="checkbox-inline">
-                                <input type="checkbox" id="inlineCheckbox4" name="optionsRadiosLevel" value="Expert"> Expert
-                            </label>
+                            <div class="radio-inline">
+                                <input type="radio" id="inlineRadiobox1" name="optionsRadiosLevel" value="Beginner"> Beginner
+                            </div>
+                            <div class="radio-inline">
+                                <input type="radio" id="inlineRadiobox2" name="optionsRadiosLevel" value="Intermediate"> Intermediate
+                            </div>
+                            <div class="radio-inline">
+                                <input type="radio" id="inlineRadiobox3" name="optionsRadiosLevel" value="Advanced"> Advanced
+                            </div>
+                            <div class="radio-inline">
+                                <input type="radio" id="inlineRadiobox4" name="optionsRadiosLevel" value="Expert"> Expert
+                            </div>
 
 
                             <p style="margin-top:10px">Sports</p>

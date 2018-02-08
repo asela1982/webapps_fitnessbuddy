@@ -178,6 +178,5 @@ def distance():
     return jsonify(df.to_dict(orient="records"))
 
 
-
 if __name__ == "__main__":
     app.run()

@@ -126,6 +126,24 @@ function createTable() {
 
 
 
+function validateForm(){
+  var fields = ["exampleInputEmail", "exampleInputName", "exampleInputDateofBirth","exampleInputAddress",
+   "optionsRadiosGender", "optionsRadiosMarital","optionsRadiosLevel", "sports","sportsBrands"]
+
+  var i, l = fields.length;
+  var fieldname;
+  for (i = 0; i < l; i++) {
+    fieldname = fields[i];
+    if (document.forms["register"][fieldname].value === "") {
+      alert(fieldname + " can not be empty");
+      return false;
+    }
+  }
+  return true;
+};
+
+
+
 buildPlot();
 buildMap();
 buildPie();
