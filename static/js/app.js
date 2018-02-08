@@ -107,10 +107,31 @@ function buildPlotH() {
 }
 
 
+function createTable() {
+  /* data route */
+  var url = "/distance";
+  Plotly.d3.json(url, function (error, response) {
+
+    console.log(response)
+    Plotly.d3.select("tbody").
+    selectAll("tr").
+    data(response).
+    enter().
+    append("tr").
+    html(function(d){
+    return `<td>${d.results}</td><td>${d.sports}</td><td>${d.level}</td><td>${d.sportsBrands}</td><td>${d.gender}</td>`;
+    })
+})};
+
+
+
+
 buildPlot();
 buildMap();
 buildPie();
 buildPlotH();
+createTable();
+
 
 
 

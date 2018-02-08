@@ -3,8 +3,10 @@ import numpy as np
 import pandas as pd
 
 #geo library
-
 from geo import getGeo
+
+#distance library
+from distance import closestBuddies
 
 #sqlalchemy library
 from sqlalchemy.ext.automap import automap_base
@@ -104,6 +106,7 @@ def send():
         db.session.add(buddy)
         db.session.commit()
 
+
         return redirect(url_for('home'), code=302)
 
     return render_template("index.html")
@@ -167,6 +170,11 @@ def plotting_barH():
     sel = [Fitness.gender, func.count(Fitness.id)]
     results = db.session.query(*sel).group_by(Fitness.gender).all()
     df = pd.DataFrame(results, columns=['Gender', 'Frequency'])
+    return jsonify(df.to_dict(orient="records"))
+
+@app.route("/distance")
+def distance():
+    df = closestBuddies()
     return jsonify(df.to_dict(orient="records"))
 
 
