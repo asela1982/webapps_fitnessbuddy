@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Find your Fitness Buddy</title>
+
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">
+
+    <!-- css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+    <div class="container" style="background:white;margin-top:10px">
+        <div class="jumbotron">
+            <h1>Find your Fitness Buddy!
+                <div>
+                    <small style="font-size:0.5em">This information is collected for academic purposes only. No personal details will be shared with third-parties.</small>
+                </div>
+            </h1>
+            <div style="margin-top:25px">
+                    <img src="{{ url_for('static', filename='img/pool.svg') }}" alt="" style="width:100px">
+                </div>
+        </div>
+                
+    </div>
+
+
+
+
+    <div class="container">
+        <div class="row">
+
+
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h2 style="margin-top:0px">Let us know about you!</h2>
+                        <h5 style="color:red">Please enter all fields. Thank you!</h5>
+                    </div>
+                    <div class="panel-body">
+
+                        <form method="POST" action="/send">
+                            <div class="form-group">
+                                <label for="exampleInputEmail">Email address</label>
+                                <input type="email" class="form-control" id="exampleInputEmail" name="exampleInputEmail" placeholder="asela.d82@gmail.com">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputName">Full Name</label>
+                                <input type="text" class="form-control" id="exampleInputName" name="exampleInputName" placeholder="Asela Dassanayake">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputDateofBirth">Date of Birth</label>
+                                <input type="date" class="form-control" id="exampleInputDateofBirth" name="exampleInputDateofBirth" placeholder="Date of Birth">
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="exampleInputAddress">Address
+                                    <span style="font-size:0.75em"> (Address Line, City/Town, State/Province/Region, Zip/Postal Code, Country) </span>
+                                    <State>
+                                </label>
+                                <input type="text" class="form-control" id="exampleInputAddress" name="exampleInputAddress" placeholder="1900 Simond Ave, Austin, TX, USA">
+                            </div>
+
+                            <p style="margin-top:10px">Gender</p>
+                            <div class="radio-inline">
+                                <label>
+                                    <input type="radio" name="optionsRadiosGender" id="optionsRadios1" value="Male"> Male
+                                </label>
+                            </div>
+                            <div class="radio-inline">
+                                <label>
+                                    <input type="radio" name="optionsRadiosGender" id="optionsRadios2" value="Female"> Female
+                                </label>
+                            </div>
+                            <div class="radio-inline">
+                                <label>
+                                    <input type="radio" name="optionsRadiosGender" id="optionsRadios3" value="Others"> Others
+                                </label>
+                            </div>
+
+                            <p style="margin-top:10px">Marital status</p>
+                            <div class="radio-inline">
+                                
+                                    <input type="radio" name="optionsRadiosMarital" id="optionsRadios1" value="Married"> Married
+                                
+                            </div>
+                            <div class="radio-inline">
+                                
+                                    <input type="radio" name="optionsRadiosMarital" id="optionsRadios2" value="Married with Children"> Married with Children
+                               
+                            </div>
+                            <div class="radio-inline">
+                                
+                                    <input type="radio" name="optionsRadiosMarital" id="optionsRadios3" value="Single"> Single
+                                
+                            </div>
+                            <div class="radio-inline">
+                                
+                                    <input type="radio" name="optionsRadiosMarital" id="optionsRadios4" value="Divorced or Widowed"> Divorced or Widowed
+                               
+                            </div>
+                            <div class="radio-inline">
+                                
+                                    <input type="radio" name="optionsRadiosMarital" id="optionsRadios5" value="Separated"> Separated
+                               
+                            </div>
+
+
+                            <p style="margin-top:10px">Level</p>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" id="inlineCheckbox1" name="optionsRadiosLevel" value="Beginner"> Beginner
+                            </label>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" id="inlineCheckbox2" name="optionsRadiosLevel" value="Intermediate"> Intermediate
+                            </label>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" id="inlineCheckbox3" name="optionsRadiosLevel" value="Advanced"> Advanced
+                            </label>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" id="inlineCheckbox4" name="optionsRadiosLevel" value="Expert"> Expert
+                            </label>
+
+
+                            <p style="margin-top:10px">Sports</p>
+                            <select class="form-control" name="sports">
+                                <option>Swimming</option>
+                                <option>Running</option>
+                                <option>Jogging</option>
+                                <option>Walking</option>
+                                <option>Cycling</option>
+                                <option>Gym</option>
+                                <option>Badminton</option>
+                                <option>Dancing</option>
+                                <option>Tennis</option>
+                                <option>Table Tennis</option>
+                                <option>Soccer/Football</option>
+                                <option>Bowling</option>
+                                <option>BasketBall</option>
+                                <option>Volleyball</option>
+                                <option>Adventure Sports (Caving,Diving,Surfing,Climbing etc)</option>
+                                <option>Golf</option>
+                                <option>Others</option>
+                            </select>
+
+                            <p style="margin-top:10px">Preferred fitness wear apparel brand</p>
+                            <select class="form-control" name="sportsBrands">
+                                <option>Reebok</option>
+                                <option>Under Armour</option>
+                                <option>Puma</option>
+                                <option>Adidas</option>
+                                <option>Nike</option>
+                                <option>Champion Sportswear</option>
+                                <option>Rhone</option>
+                                <option>Ten Thousand</option>
+                                <option>Eysom</option>
+                                <option>Gap</option>
+                                <option>New balance</option>
+                                <option>Asics</option>
+                                <option>Lotto</option>
+                                <option>Speedo</option>
+                                <option>Wilson</option>
+                                <option>Prince</option>
+                                <option>FILA</option>
+                                <option>Converse</option>
+                                <option>Skechers</option>
+                                <option>Others</option>
+                            </select>
+
+
+                            <button type="submit" class="btn btn-default" style="margin-top:10px">Submit</button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="col-md-6" style="margin-top:0px">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h2 style="margin-top:0px">DATA</h2>
+                    </div>
+                    <div class="panel-body">
+                        The following information is available to carry out data analysis
+
+
+                        <ul>
+                            <li>Country</li>
+                            <li>Date of Birth</li>
+                            <li>Gender</li>
+                            <li>Level</li>
+                            <li>Martial Status</li>
+                            <li>Sports</li>
+                            <li>Preferred Brand</li>
+                        </ul>
+
+                        <button type="button" class="btn btn-primary">
+                            <a href="/api/data" style="text-decoration: none;color:white">API</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-12">
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h2 style="margin-top:0px">DASHBOARD</h2>
+                    </div>
+                    <div class="panel-body">
+
+                        <div class="col-md-6">
+                            <h2>Buddies by Sports!</h2>
+                            <div id="barPlot"></div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <h2>Locate your buddy!</h2>
+                            <div id="mapPlot"></div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <h2>Most popular brand</h2>
+                            <div id="piePlot"></div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <h2>Buddies by Gender</h2>
+                            <div id="barHPlot"></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- plotly.js cdn -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+    <!-- js -->
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+
+</body>
+
+</html>
