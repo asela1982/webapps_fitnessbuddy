@@ -58,18 +58,16 @@ class Fitness(db.Model):
         return '<Fitness %r>' % (self.name)
 
 
-# @app.before_first_request
-# def setup():
-#     # Recreate database each time for demo
-#     db.drop_all()
-#     db.create_all()
+@app.before_first_request
+def setup():
+    # Recreate database each time for demo
+    db.drop_all()
+    db.create_all()
 
 
 @app.route("/")
 def home():
 
-    db.drop_all()
-    db.create_all()
 
     buddy1 = Fitness(email="asela.d82@gmail.com", \
                     name="asela dassanayake", \
