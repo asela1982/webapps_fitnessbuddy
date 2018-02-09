@@ -67,6 +67,66 @@ class Fitness(db.Model):
 
 @app.route("/")
 def home():
+
+    buddy1 = Fitness(email="asela.d82@gmail.com", \
+                    name="asela dassanayake", \
+                    dateofbirth="08-15-1982", \
+                    address="26/2d,Sri Dharmapala Mawatha,Mount Lavinia,Sri Lanka",\
+                    gender="Male",\
+                    martialstatus="Single",\
+                    level="Expert",\
+                    sports="Tennis",\
+                    sportsBrands="Nike",\
+                    lat = 6.8443913,\
+                    lng = 79.8635164,\
+                    country = "Sri Lanka")
+
+    buddy2 = Fitness(email="bobby.t@gmail.com", \
+                    name="Bobby Taylor", \
+                    dateofbirth="03-19-1982", \
+                    address="saint louis,usa",\
+                    gender="Male",\
+                    martialstatus="Married",\
+                    level="Advanced",\
+                    sports="Swimming",\
+                    sportsBrands="Speedo",\
+                    lat = 38.6270025,\
+                    lng = -90.19940419999999,\
+                    country = "USA")
+
+    buddy3 = Fitness(email="john.madeo@gmail.com", \
+                    name="jean madeo", \
+                    dateofbirth="01-25-1980", \
+                    address="paris,france",\
+                    gender="Male",\
+                    martialstatus="Married with Children",\
+                    level="Beginner",\
+                    sports="Walking",\
+                    sportsBrands="Puma",\
+                    lat = 48.856614,\
+                    lng = 2.3522219,\
+                    country = "France")
+
+    buddy4 = Fitness(email="wendy.w@gmail.com", \
+                    name="wendy walsh", \
+                    dateofbirth="07-20-1985", \
+                    address="doha,qatar",\
+                    gender="Female",\
+                    martialstatus="Single",\
+                    level="Advanced",\
+                    sports="Swimming",\
+                    sportsBrands="Nike",\
+                    lat = 25.2854473,\
+                    lng = 51.53103979999999,\
+                    country = "Qatar")
+
+
+    db.session.add(buddy1)
+    db.session.add(buddy2)
+    db.session.add(buddy3)
+    db.session.add(buddy4)
+    db.session.commit()
+
     return render_template("index.html")
 
 # Query the database and send the jsonified results
