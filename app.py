@@ -68,6 +68,9 @@ class Fitness(db.Model):
 @app.route("/")
 def home():
 
+    db.drop_all()
+    db.create_all()
+
     buddy1 = Fitness(email="asela.d82@gmail.com", \
                     name="asela dassanayake", \
                     dateofbirth="08-15-1982", \
