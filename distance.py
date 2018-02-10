@@ -2,9 +2,15 @@ def closestBuddies():
 
     from geopy.distance import vincenty
     import pandas as pd
-    import sqlite3
+
+    # pymysql
+    import pymysql
+    # pymysql.install_as_MySQLdb()
     
-    df  = pd.read_sql(sql='SELECT * FROM fitness;',con= sqlite3.connect("db/fitness.sqlite"))
+    connection_string ="mysql://baff6e90fa899d:cc8fb5c8@us-cdbr-iron-east-05.cleardb.net/heroku_69314c212045914"
+    engine = create_engine(connection_string)
+    conn = engine.connect()
+    df  = pd.read_sql(sql='SELECT * FROM fitness;',con=conn)
 
     latestBuddy = df['id'].idxmax(axis=0, skipna=True)
     latestBuddy = df.iloc[latestBuddy]['lat'],df.iloc[latestBuddy]['lng']
