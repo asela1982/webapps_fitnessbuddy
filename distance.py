@@ -2,10 +2,12 @@ def closestBuddies():
 
     from geopy.distance import vincenty
     import pandas as pd
+    from sqlalchemy import create_engine
 
     # pymysql
     import pymysql
-    # pymysql.install_as_MySQLdb()
+    pymysql.install_as_MySQLdb()
+
     
     connection_string ="mysql://baff6e90fa899d:cc8fb5c8@us-cdbr-iron-east-05.cleardb.net/heroku_69314c212045914"
     engine = create_engine(connection_string)
