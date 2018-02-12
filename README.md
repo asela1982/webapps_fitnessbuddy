@@ -1,158 +1,41 @@
-# flask_heroku_simple
-Example of Deploying a Simple Flask App to Heroku
-
-## App Setup
-
-### Create, Clone, and CD into your repo
-
-```
-git clone https://github.com/jhillgithub/<your_repo>.git
-cd <your_repo>
-```
-
-### Create Conda Environment
-
-```
-conda create -n myflaskapp python=3.6
-source activate myflaskapp
-```
-
-### Install Flask and Gunicorn Dependencies
-
-1. Activate your Environment (if you didn't do it above)
-
-```
-source activate myflaskapp 
-```
-
-2. Install Flask and Gunicorn
-
-```
-pip install Flask==0.12.2
-pip install gunicorn==19.7.1
-```
-
-3. Create a `requirements.txt` file
-
-```
-pip freeze > requirements.txt
-```
-
-### Create a runtime file to specify the version of Python to use
-
-1. Create a file called runtime.txt
-
-``` 
-touch runtime.txt
-```
-
-2. Open `runtime.txt` with a text editor and add the python version
-
-``` 
-python-3.6.2
-```
-
-### Create a Procfile for the server
-
-1. Create a file called `Procfile`
-
-```
-touch Procfile
-```
-
-2. Open `Procfile` with a text editor and add the following
-
-```
-web: gunicorn app:app
-```
-
-### Create the Flask App
-
-1. Create a file called `app.py`
-
-```
-touch app.py
-```
-
-2. Open `app.py` with a text editor and add the following code 
-
-```python
-from flask import Flask
-app = Flask(__name__)
+## Find your fitness buddy 
+##### Full-Stack Data Analytics Web Application
 
 
-@app.route('/')
-def hello():
-    return "Hello World!"
-
-if __name__ == '__main__':
-    app.run()
-
-```
-
-### Test the app
-
-1. Launch the app
-
-```
-python app.py
-```
-
-2. View the app in the browser at `http://127.0.0.1:5000`
+Based on your fitness requirement, the application will locate a buddy for you! The application is deployed on Heroku at the following link https://tranquil-sea-66404.herokuapp.com/.
 
 
-3. `ctrl-c` to quit
+#### Key features
 
-----
+Interactive dashboard based on Plotly.js
+API route for users to extract data to carry out further analysis.
+A simple recommendation that lists information about the closest buddies based on distance(miles).
 
-## GIT Setup
 
-### Init Repo
+#### Technology stack used:
 
-```
-git add -A
-git commit -m "init repo"
-```
+* ClearDB(Platform-As-A-Service built on MySQL)
+* Pandas
+* Flask microframework
+* SQLAlchemy(Python SQL toolkit and Object Relational Mapper)
+* Javascript
+* Plotly.js(Visualization)
+* HTML/CSS/Bootstrap
+* Google Geocoding API/ Mapbox
+* Heroku
 
-### Push to Github
+#### User Interface
 
-1. Create Empty repo on github
+![user interface1](images/image1.png "user interface1")
+![user interface1](images/image2.png "user interface2")
 
-2. Push files to github
 
-```
-git remote add origin https://github.com/<github account>/<repo name>.git
-git push -u origin master
-```
+#### Things to do once the app reaches 500 users
 
-----
+* Create further visualizations using d3.js
 
-## Heroku Setup
+* Incorporate collaborative filterting to refine the recommendation algorithem
 
-### Login to heroku
 
-``` 
-heroku login
-```
 
-### Create the heroku app
-
-```
-cd /path/to/app
-heroku create
-```
-
-### Deploy the app
-
-```
-git push heroku master
-```
-
-### Open the app
-
-```
-heroku open
-```
-
-Note: Make sure that you are inside of the app repo folder before running `heroku create`
 
