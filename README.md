@@ -7,9 +7,9 @@ Based on your fitness requirement, the application will locate a buddy for you! 
 
 #### Key features
 
-Interactive dashboard based on Plotly.js
-API route for users to extract data to carry out further analysis.
-A simple recommendation that lists information about the closest buddies based on distance(miles).
+* Interactive dashboard based on Plotly.js
+* API route for users to extract data to carry out further analysis.
+* A simple recommendation that lists information about the closest buddies based on distance(miles).
 
 
 #### Technology stack used:
